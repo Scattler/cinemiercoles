@@ -8,12 +8,3 @@ console.log(nombres[2])
 
 
 
-let persona={
-    nombre:"Moises",
-    profesion:"Ingeniero",
-    edad:24,
-    HinchaDelMejor:true,
-    materiasDictadas:["web2","avanzada","nueva"]
-}
-
-console.log(persona.nombre)
