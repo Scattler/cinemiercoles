@@ -1,0 +1,8 @@
+.banner {
+
+    background-image: url('../img/img1.jpg');
+    padding: 10% 30% 30% 20%;
+    background-position: top center;
+    background-size: cover;
+
+}
