@@ -96,6 +96,8 @@ let peliculas=[
 
 
 //RECORRIENDO UN ARREGLO EN JS
+
+let fila=document.getElementById("fila")
 peliculas.forEach(function(pelicula){
     //console.log(pelicula)
     console.log(pelicula.nombre)
@@ -105,5 +107,59 @@ peliculas.forEach(function(pelicula){
     console.log(pelicula.sinopsis)
     console.log(pelicula.clasificacion)
     console.log(pelicula.idioma)
+//TRAVERSING (CREAR ETIQUETAS DE HTML DESDE JS)
+
+//creamos una columna para cada pelicula
+let column=document.createElement('div')
+column.classList.add('col')
+
+//creamos una tarjeta para cada pelicula
+let tarjeta=document.createElement('div')
+tarjeta.classList.add('card','h-100')
+
+//creamos una foto para cada pelicula
+let poster=document.createElement('img')
+poster.classList.add('card-img-top')
+poster.src=pelicula.poster
+
+//creamos el nombre de la pelicula
+let nombre=document.createElement('h5')
+nombre.classList.add('card-title','text-center')
+nombre.textContent=pelicula.nombre
+
+//creamos el genero  de cada pelicula
+let genero = document.createElement('h4')
+genero.classList.add('text-start')
+genero.textContent="Genero: "+pelicula.genero
+
+//creamos el idioma de cada pelicula
+let idioma=document.createElement('h6')
+idioma.classList.add('fw-bold')
+idioma.textContent=pelicula.idioma
+
+//creamos la sipnosis
+let sipnosis=document.createElement('p')
+sipnosis.classList.add('d-none')
+sipnosis.textContent=pelicula.sipnosis
+
+
+//Padres e hijos
+tarjeta.appendChild(poster)
+tarjeta.appendChild(nombre)
+tarjeta.appendChild(genero)
+tarjeta.appendChild(idioma)
+tarjeta.appendChild(sipnosis)
+
+column.appendChild(tarjeta)
+fila.appendChild(column)
+
+
+
+
+})
+
+//Detectando seleccion de una pelicula
+fila.addEventListener("click",function(){
+    alert("Estas seleccionand una pelicula")
 })
 
